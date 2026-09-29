@@ -1,20 +1,57 @@
-﻿//Variable names should be short yet meaningful.
-//The choice of a variables name should be mnemonic- that is,
-//designed to incicate to the reader the intent of its use.
+﻿CalculatorApp();
 
-//This intger variable stores the first number to be added.
-//Ask the user to input the first number to be added.
-Console.WriteLine("Please enter the first number to be added:, then press Enter");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
+void CalculatorApp()
+{
+    // Declare the variables and initialise them to 0.
+    int firstNumber = 0;
+    int secondNumber = 0;
+    int result = 0;
+    int choice = 0;
 
-//This integer variable stores the second number to be added.
-//Ask the user to input the second number to be added.
-Console.WriteLine("Please enter the second number to be added:, then press Enter");
-int secondNumber = Convert.ToInt32(Console.ReadLine());
+    // Ask the user to input the first number.
+    Console.WriteLine("Please enter the first number to be added:, then press Enter");
+    firstNumber = Convert.ToInt32(Console.ReadLine());
 
-//This result integer variable stores the result of the addition.
-//Performs calculation.
-int result = firstNumber + secondNumber;
+    // Display menu.
+    Console.WriteLine("Choose an option from the following list:");
+    Console.WriteLine("1 - Add");
+    Console.WriteLine("2 - Subtract");
+    Console.WriteLine("3 - Divide");
+    Console.WriteLine("4 - Multiply");
 
-//Outputs the result of the addition to the console.
-Console.WriteLine("Adding {0} and {1} give the answer {2}", firstNumber, secondNumber, result);
+    // Store the user's choice.
+    choice = Convert.ToInt32(Console.ReadLine());
+
+    // Ask for second number.
+    Console.WriteLine("Please enter the second number to be added:, then press Enter");
+    secondNumber = Convert.ToInt32(Console.ReadLine());
+
+    //Usw an IF statement to do the math.
+    if (choice == 1)
+    {
+        result = firstNumber + secondNumber;
+        Console.WriteLine($"Adding {firstNumber} and {secondNumber} gives you {result}");
+    }
+    else if (choice == 2)
+    {
+        result = firstNumber - secondNumber;
+        Console.WriteLine($"Subtracting {firstNumber} and {secondNumber} gives you {result}");
+    }
+    else if (choice == 3)
+    {
+        result = firstNumber / secondNumber;
+        Console.WriteLine($"Dividing {firstNumber} and {secondNumber} gives you {result}");
+    }
+    else if (choice == 4)
+    {
+        result = firstNumber * secondNumber;
+        Console.WriteLine($"Multiplying {firstNumber} and {secondNumber} gives you {result}");
+    }
+    else
+    {
+        Console.WriteLine("You did not choose a valid option between 1 and 4");
+    }
+
+
+
+}
